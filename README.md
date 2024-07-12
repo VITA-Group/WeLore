@@ -1,5 +1,4 @@
-# From GaLore to WeLore: Memory-Efficient Finetuning with Adaptive Low-Rank Weight Projection
----
+# From GaLore to WeLore: How Low-Rank Weights Non-uniformly Emerge from Low-Rank Gradients
 ```This repository is under development and will be continuously updated (with additional results, fixes). Upcoming experiments on LLaMa-3.```
 
 > **Authors:** [Ajay Jaiswal](https://ajay1994.github.io/), [Lu Yin](https://zhegan27.github.io/), [Zhenyu Zhang](https://www.linkedin.com/in/xianzhi-du-1b128934), [Shiwei Liu](https://shiweiliuiiiiiii.github.io/), [Jiawei Zhao](https://jiawei-zhao.netlify.app/), [Yuandong Tian](https://yuandong-tian.com/), [Zhangyang Wang](https://vita-group.github.io/index.html)
