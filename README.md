@@ -3,7 +3,7 @@
 
 > **Authors:** [Ajay Jaiswal](https://ajay1994.github.io/), [Lu Yin](https://zhegan27.github.io/), [Zhenyu Zhang](https://www.linkedin.com/in/xianzhi-du-1b128934), [Shiwei Liu](https://shiweiliuiiiiiii.github.io/), [Jiawei Zhao](https://jiawei-zhao.netlify.app/), [Yuandong Tian](https://yuandong-tian.com/), [Zhangyang Wang](https://vita-group.github.io/index.html)
 
-> **Paper Link:** [LINK]
+> **Paper Link:** [LINK](https://arxiv.org/abs/2407.11239)
 
 ## Abstract
 
