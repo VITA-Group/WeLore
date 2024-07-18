@@ -49,9 +49,9 @@ pip install accelerate==0.18.0
 pip install shortuuid tqdm
 ```
 
-Step 4: Download pre-computed SVD singular values for `LLaMa-7B and LLaMa-13B` ([Link](https://utexas.box.com/s/g0tfx09mfq133atqcnjbn8jm7blqwu2q)) and save to `./data` folder.
+Step 4: Download pre-computed SVD singular values for `LLaMa-7B and LLaMa-13B` ([Link](https://huggingface.co/vita-group/svd-checkpoints)) and save to `./data` folder.
 
-Step 5: Download Low-rank compressed Model Checkpoints for downstream finetuning of `LLaMa-7B` [Link](https://utexas.box.com/s/g0tfx09mfq133atqcnjbn8jm7blqwu2q) and save to `./checkpoints` folder.
+Step 5: Download Low-rank compressed Model Checkpoints for downstream finetuning of `LLaMa-7B` [Link](https://huggingface.co/vita-group) and save to `./checkpoints` folder.
 
 
 ## Usage
