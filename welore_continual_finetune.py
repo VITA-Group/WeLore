@@ -51,7 +51,7 @@ rank_thresold_llama13b_dict = {
     50: 0.175,
     60: 0.215,
     70: 0.26
-}
+ }
 
 def parse_args(args):
     parser = argparse.ArgumentParser()
@@ -181,7 +181,7 @@ def main(args):
         logger.info(f"{k:30} {v}")
     logger.info("*" * 40)
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_config, use_fast=True, padding_side="right", use_auth_token="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")
+    tokenizer = AutoTokenizer.from_pretrained(args.model_config, use_fast=True, padding_side="right", use_auth_token="XXXXXXXXX")
     tokenizer.pad_token_id = 0
 
     
