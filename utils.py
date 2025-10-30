@@ -118,7 +118,7 @@ def uniform_rank_pruning(args, pruning_ratio, layers_singular_value, logger):
     logger.info(f"Attempted Rank Reduction: {(pruned_rank/total_rank)* 100:.3f} %")
     return rank_pruning
 
-def adaptive_rank_pruning(args, pruning_ratio, layers_singular_value, logger):
+def adaptive_rank_pruning(args, rank_thresold, layers_singular_value, logger):
     logger.info(f"Using the mean threolding\nsum(_data < args.rank_thresold = {args.rank_thresold})\n\n")
     total_rank, pruned_rank = 0, 0
     rank_pruning = {}
@@ -129,7 +129,7 @@ def adaptive_rank_pruning(args, pruning_ratio, layers_singular_value, logger):
         for name in subset:
             data = layer[name].clone().cpu().numpy()
             _data = (data-min(data))/(max(data)-min(data))
-            rank_pruning[index][name] = sum(_data < args.rank_thresold) # Rank which will be pruned
+            rank_pruning[index][name] = sum(_data < rank_thresold) # Rank which will be pruned
             total_rank += len(_data)
             pruned_rank += rank_pruning[index][name]
     logger.info(f"Attempted Rank Reduction: {(pruned_rank/total_rank)* 100:.3f} %")
