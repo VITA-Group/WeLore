@@ -22,14 +22,14 @@ def eval_ppl(model, tokenizer, device=torch.device("cuda:0"), dataset="wikitext2
     # Print status
     logger.info(f"Evaluating on {dataset} .....")
 
-    if os.path.exists("./data/test_loader.pt"):
-        testloader = torch.load("./data/test_loader.pt")
+    if os.path.exists(f"./data/test_loader_{dataset}.pt"):
+        testloader = torch.load(f"./data/test_loader_{dataset}.pt")
     else:
         # Get the test loader
         _, testloader = get_loaders(
             dataset, seed=0, seqlen=model.seqlen, tokenizer=tokenizer 
         )
-        torch.save(testloader, "./data/test_loader.pt")
+        torch.save(testloader, f"./data/test_loader_{dataset}.pt")
 
     # Evaluate ppl in no grad context to avoid updating the model
     with torch.no_grad():
