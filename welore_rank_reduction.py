@@ -37,12 +37,12 @@ def get_llm(model_name, cache_dir="llm_weights"):
 
 rank_thresold_llama7b_dict = {
     10: 0.0225,
-    20: 0.084,
-    30: 0.115,
-    40: 0.145,
-    50: 0.175,
-    60: 0.215,
-    70: 0.26
+    20: 0.0495,
+    30: 0.076,
+    40: 0.105,
+    50: 0.135,
+    60: 0.17,
+    70: 0.21
 }
 rank_thresold_llama13b_dict = {
     10: 0.0225,
@@ -129,8 +129,9 @@ def main():
 
     ############################################# dense ############################################
 
-    dense_ppl = eval_ppl(model, tokenizer, None, "c4")
-    logger.info(f"Before Rank Reduction PPL on C4: {dense_ppl}\n")
+    dense_ppl = eval_ppl(model, tokenizer, None, "wikitext2")
+    logger.info(f"Before Rank Reduction PPL on Wikitext: {dense_ppl}\n")
+
 
     ############################################# svd ############################################
     
@@ -139,8 +140,8 @@ def main():
     reduced_rank, total_rank = do_rank_reduction(args, model, tokenizer, rank_pruning, args.min_ratio, logger, False)
     
 
-    reduction_svd_ppl = eval_ppl(model, tokenizer, None, "c4")
-    logger.info(f"After Rank Reduction PPL on C4: {reduction_svd_ppl}\n")
+    reduction_svd_ppl = eval_ppl(model, tokenizer, None, "wikitext2")
+    logger.info(f"After Rank Reduction PPL on Wikitext: {reduction_svd_ppl}\n")
     
     wandb.log({"Dense_PPL": dense_ppl})
     wandb.log({"Compressed_PPL": reduction_svd_ppl})
